@@ -78,8 +78,9 @@ const Clicker = () => {
         {ameliorations[upgradeIndex].cout}
       </button>
     ) : null;
-  // Afficher le rond + Afficher le nom total de points.
-  return (
+
+    
+    return (
     <>
       <div className={styles.clicker} onClick={handleClicker}></div>
 
