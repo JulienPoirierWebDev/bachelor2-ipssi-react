@@ -1,4 +1,5 @@
 const SectionTitle = ({ text }) => {
+  console.log("RENDER SECTION TITLE");
   return (
     <h2
       style={{
