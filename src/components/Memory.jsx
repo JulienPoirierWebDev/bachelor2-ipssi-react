@@ -1,11 +1,4 @@
-import { useState } from "react";
-import DemoUseEffect from "./components/DemoUseEffect";
-
-function App() {
-  // partie logique : là où l'on calcule, on fetch, etc.
-  const [visible, setVisible] = useState(true);
-  console.log("Je suis APP");
-
+const Memory = () => {
   // Système de jeu : mémory
 
   // Cartes : A, B, C, D, E, F
@@ -24,23 +17,12 @@ function App() {
   3- Quand on clic sur une 2e carte, on compare cette carte au choix sauvegardé.
 
   4- Si les deux sont les mêmes : on enregistre quelles cartes ont été trouvés.
-
-  */
-
-  // Partie visuelle : description de l'UI avec injection de data.
+*/
   return (
     <>
-      <button
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        {visible ? "Démonter le composant" : "Monter le composant"}
-      </button>
-
-      {visible ? <DemoUseEffect /> : null}
+      <p>Memory</p>
     </>
   );
-}
+};
 
-export default App;
+export default Memory;
