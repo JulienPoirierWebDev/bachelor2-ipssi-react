@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DemoUseEffect from "./components/DemoUseEffect";
+import Memory from "./components/Memory";
 
 function App() {
   // partie logique : là où l'on calcule, on fetch, etc.
@@ -30,15 +30,7 @@ function App() {
   // Partie visuelle : description de l'UI avec injection de data.
   return (
     <>
-      <button
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        {visible ? "Démonter le composant" : "Monter le composant"}
-      </button>
-
-      {visible ? <DemoUseEffect /> : null}
+      <Memory />
     </>
   );
 }

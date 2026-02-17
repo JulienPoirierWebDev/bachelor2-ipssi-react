@@ -1,3 +1,16 @@
+import Card from "./Card";
+
+const créerUnJeuDeCarte = (arrayCartesUniques) => {
+  const double = [...arrayCartesUniques, ...arrayCartesUniques];
+
+  const nouveauDoubleAvecId = double.map((carte, index) => {
+    return { id: index, type: carte };
+  });
+
+  // TODO SORT
+
+  return nouveauDoubleAvecId;
+};
 const Memory = () => {
   // Système de jeu : mémory
 
@@ -18,8 +31,20 @@ const Memory = () => {
 
   4- Si les deux sont les mêmes : on enregistre quelles cartes ont été trouvés.
 */
+
+  const cartes = ["A", "B", "C", "D", "E", "F"];
+
+  const paquet = créerUnJeuDeCarte(cartes);
+
+
+  // cartes = [{id:1, type:"A"}]
+  // Pour eviter d'utiliser l'index
+
   return (
     <>
+      {paquet.map((carte) => {
+        return <Card key={carte.id} carte={carte.type} />;
+      })}
       <p>Memory</p>
     </>
   );
