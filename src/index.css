@@ -1,13 +1,60 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --margin : 20px;
+@font-face {
+  font-family: "Barlow";
+  src: url("./assets/fonts/Barlow/Barlow-SemiBold.ttf") format("TrueType");
 }
 
+@font-face {
+  font-family: "FrauncesBlack";
+  src: url("./assets/fonts/Fraunces/static/Fraunces_72pt-Black.ttf")
+    format("TrueType");
+}
 
+@font-face {
+  font-family: "FrauncesBold";
+  src: url("./assets/fonts/Fraunces/static/Fraunces_72pt-Bold.ttf")
+    format("TrueType");
+}
+
+:root {
+  --red-400: hsl(7, 99%, 70%);
+  --yellow-500: hsl(51, 100%, 49%);
+  --green-800: hsl(167, 40%, 24%);
+  --blue-800: hsl(198, 62%, 26%);
+  --green-500: hsl(167, 34%, 41%);
+  --grey-950: hsl(212, 27%, 19%);
+  --grey-600: hsl(213, 9%, 39%);
+  --grey-550: hsl(232, 10%, 55%);
+  --grey-400: hsl(210, 4%, 67%);
+  --white: hsl(0, 100%, 100%);
+  --font-size-body: 18px;
+  --font-size-title: 36px;
+
+  font-family: Barlow, Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (width<1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid > * {
+  aspect-ratio: 1/1;
+}
+
+.bloc-no-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25%;
+}

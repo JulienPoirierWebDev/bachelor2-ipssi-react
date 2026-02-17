@@ -1,0 +1,23 @@
+.bloc {
+  background-image: var(--image);
+  background-size: cover;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  bottom: 30px;
+  left: 25%;
+  right: 25%;
+  text-align: center;
+  line-height: 2;
+
+}
+
+.title {
+  margin-block: 20px;
+}
+
+.paragraph {
+  margin-block: 20px;
+}
