@@ -1,6 +1,6 @@
-import Button from "./atoms/Button";
-import Paragraph from "./atoms/Paragraph";
-import SectionTitle from "./atoms/SectionTitle";
+import Button from "../atoms/Button";
+import Paragraph from "../atoms/Paragraph";
+import SectionTitle from "../atoms/SectionTitle";
 
 const BlockWithoutImg = ({ title, paragraph }) => {
   return (

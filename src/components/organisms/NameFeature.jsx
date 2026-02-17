@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Paragraph from "../components/atoms/Paragraph";
-import SectionTitle from "../components/atoms/SectionTitle";
+import Paragraph from "../atoms/Paragraph";
+import SectionTitle from "../atoms/SectionTitle";
 
 const NameFeature = ({ instance }) => {
   const [name, setName] = useState("");
