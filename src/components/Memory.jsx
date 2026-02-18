@@ -36,6 +36,7 @@ const Memory = () => {
 
   const paquet = créerUnJeuDeCarte(cartes);
 
+  console.log(paquet);
 
   // cartes = [{id:1, type:"A"}]
   // Pour eviter d'utiliser l'index

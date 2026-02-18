@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  min-height: 100vh;
+}
+
+.layout > * {
+  border: 2px solid black;
+}

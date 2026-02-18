@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Memory from "./components/Memory";
+import GameOfThrones from "./components/GameOfThrones";
 
 function App() {
   // partie logique : là où l'on calcule, on fetch, etc.
@@ -30,7 +30,7 @@ function App() {
   // Partie visuelle : description de l'UI avec injection de data.
   return (
     <>
-      <Memory />
+      <GameOfThrones />
     </>
   );
 }
