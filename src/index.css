@@ -62,3 +62,9 @@
 .selected {
   color: red;
 }
+
+
+.active {
+  color: blue;
+  border: 2px solid black;
+}

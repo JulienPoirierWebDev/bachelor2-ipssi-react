@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../contexts/UserContextProvider";
 import styles from "./GameOfThrones.module.css";
 import House from "./House";
-
 const GameOfThrones = () => {
   const [houses, setHouses] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [selectedHouse, setSelectedHouse] = useState(null);
+
+  const { name } = useContext(UserContext);
 
   // Etape 1 : Dans sidebar, on affiche la liste des maisons.
 
@@ -39,6 +41,7 @@ const GameOfThrones = () => {
   }, []);
   return (
     <div className={styles.layout}>
+      <p>{name}</p>
       <aside className="sidebar">
         <h2>Sidebar</h2>
         {houses.length > 0 ? (
