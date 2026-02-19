@@ -29,8 +29,6 @@
   --font-size-body: 18px;
   --font-size-title: 36px;
 
-
-
   font-family: Barlow, Arial, Helvetica, sans-serif;
   font-size: var(--font-size-body);
 }
@@ -59,4 +57,8 @@
   flex-direction: column;
   justify-content: center;
   padding: 25%;
+}
+
+.selected {
+  color: red;
 }

@@ -1,6 +1,12 @@
+import { useEffect, useState } from "react";
 import styles from "./GameOfThrones.module.css";
+import House from "./House";
 
 const GameOfThrones = () => {
+  const [houses, setHouses] = useState([]);
+  const [characters, setCharacters] = useState([]);
+  const [selectedHouse, setSelectedHouse] = useState(null);
+
   // Etape 1 : Dans sidebar, on affiche la liste des maisons.
 
   // Avec l'url : https://www.anapioficeandfire.com/api/houses
@@ -14,22 +20,54 @@ const GameOfThrones = () => {
   // Bonus : faire des composants pour la card personnage.
 
   // Etape 3 : quand on clic sur "détails", une popup (ou autre) s'affiche avec les détails sur personnage.
-  // Vous aurez besoin d'un rendu conditionnel : ternaire. 
+  // Vous aurez besoin d'un rendu conditionnel : ternaire.
 
   //
 
+  useEffect(() => {
+    const getHouses = async () => {
+      const response = await fetch(
+        "https://www.anapioficeandfire.com/api/houses",
+      );
+
+      const data = await response.json();
+
+      setHouses(data);
+    };
+
+    getHouses();
+  }, []);
   return (
     <div className={styles.layout}>
       <aside className="sidebar">
         <h2>Sidebar</h2>
-        {
-          // Afficher les maisons ici
-          // Quand on clic sur une des maison
-        }
+        {houses.length > 0 ? (
+          <>
+            {houses.map((house) => {
+              return (
+                <House
+                  key={house.url}
+                  house={house}
+                  setCharacters={setCharacters}
+                  setSelectedHouse={setSelectedHouse}
+                  isSelected={selectedHouse === house.name}
+                />
+              );
+            })}
+          </>
+        ) : null}
       </aside>
 
       <div className="content">
         <h2>Contenu principal</h2>
+
+        {characters.length > 0 ? (
+          characters.map((oneCharacter) => (
+            <p key={oneCharacter.url}>{oneCharacter.name}</p>
+          ))
+        ) : (
+          <p>Il n'y a pas de personnage dans cette maison</p>
+        )}
       </div>
     </div>
   );
