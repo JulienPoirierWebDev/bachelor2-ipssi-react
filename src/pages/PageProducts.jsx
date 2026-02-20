@@ -39,13 +39,13 @@ const PageProducts = () => {
     <>
       <p>Hello</p>
       {error && <p>{error}</p>}
-      {panier.panier.length === 0 ? (
+      {panier.products.length === 0 ? (
         <p>Votre panier est vide</p>
       ) : (
         <div>
-          {panier.panier.map((item) => {
+          {panier.products.map((item) => {
             return (
-              <div>
+              <div key={item.productId}>
                 <p>{item.title}</p>
                 <p>Quantité : {item.quantity}</p>
               </div>

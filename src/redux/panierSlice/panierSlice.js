@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  panier: [],
+  products: [],
   total: 0,
 };
 
@@ -24,18 +24,18 @@ const panierSlice = createSlice({
       console.log(action);
       const id = action.payload.productId;
       const title = action.payload.title;
-      const panierIndex = state.panier.findIndex(
+      const panierIndex = state.products.findIndex(
         (element) => element.productId === id,
       );
 
       if (panierIndex !== -1) {
         // trouver l'index pour le mettre a jour
-        state.panier[panierIndex] = {
-          ...state.panier[panierIndex],
-          quantity: state.panier[panierIndex].quantity + 1,
+        state.products[panierIndex] = {
+          ...state.products[panierIndex],
+          quantity: state.products[panierIndex].quantity + 1,
         };
       } else {
-        state.panier.push({
+        state.products.push({
           productId: id,
           quantity: 1,
           title: title,
