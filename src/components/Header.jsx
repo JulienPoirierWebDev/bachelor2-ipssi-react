@@ -23,6 +23,10 @@ const Header = () => {
       pathname: "/pokemon/25",
       text: "Pikachu",
     },
+    {
+      pathname: "/products",
+      text: "Produits",
+    },
   ];
 
   return (
